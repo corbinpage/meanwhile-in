@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 
+  text: 
+  start_time: 
+  url: 
+  caption: 
+  username: 
+  custom1: 
+  custom2: 
+  custom3: 
+
+two:
+  id: 
+  text: 
+  start_time: 
+  url: 
+  caption: 
+  username: 
+  custom1: 
+  custom2: 
+  custom3: 

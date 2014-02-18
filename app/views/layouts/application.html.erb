@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html class="full" lang="en">
+<!-- The full page image background will only work if the html has the custom class set to it! Don't delete it! -->
+
+<head>
+      <title>Meanwhile In...</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+</head>
+
+<body>
+
+<%= yield %>
+
+</body>
+</html>
