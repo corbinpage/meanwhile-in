@@ -5,7 +5,7 @@ MeanwhileIn::Application.routes.draw do
 
   root "meanwhile#index"
 
-  post "meanwhile/search"
+  post "meanwhile/search" => 'meanwhile#search', as: :search
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

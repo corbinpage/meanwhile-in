@@ -30,10 +30,15 @@
             <!--<div class="col-lg-6 col-sm-12">-->
             <div class="col-lg-6">
                 <%= image_tag((!(defined?(action)) || action[:url].nil?) ? "instagram_example.jpg" : action[:url],:alt => "Snapshot", :id => "pic")%>                
-                <%= form_tag('meanwhile/search', remote: true) do %>
+                
+
+                <!--<%= form_tag('meanwhile/search', remote: true) do %>
                   <br>
                   <%= text_field_tag('text', nil, value: "Charleston, SC") %>
-                  <%= submit_tag("Search") %>
+                  <%= submit_tag("Search") %>-->
+
+
+
                 <% end %>                
             </div>
         </div>
@@ -41,30 +46,37 @@
             <!--<div class="col-lg-6 col-sm-12">-->
             <div class="col-lg-6">
                 <h1 style='visibility: hidden;'>Filler</h1>
+                <button type="button" onclick="submitForm()">Send data</button>
             </div>
         </div>
     </div>
 
-    <!-- JavaScript
+    <!-- JavaScript -->
     
     <script>
-       function submitForm() {
-            alert("checked the button - worked");
-            $.ajax({
-                 type:'get', 
-                 url: '/meanwhile/index', 
-                 data: $.param({ text: "New York, NY"}),
+      function submitForm() {
+        alert("checked the button - worked");
+        $.ajax({
+             type:'POST', 
+             url: '/meanwhile/search', 
+             data: $.param({ text: "New York, NY"})
+        });
+      }
 
-                 success: function (data) {
-                    alert(data)
-                    /*$.each(data, function(key, value) {
-                      alert(key + ", " + value)
-                    });*/
-                  }
-            });
-        }
+
+      // function submitForm() {
+      //       alert("checked the button - worked");
+      //       $.ajax({
+      //            type:'POST', 
+      //            url: '/meanwhile/search/', 
+      //            data: $.param({ text: "New York, NY"}),
+      //            success: function (data) {
+      //               alert('data')
+      //               /*$.each(data, function(key, value) {
+      //                 alert(key + ", " + value)*/
+      //               }
+      //             });
+      //       };
     </script>
 
-
-    <!--<script src="bootstrap.js"></script>-->
 
