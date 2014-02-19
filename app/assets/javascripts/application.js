@@ -16,4 +16,3 @@
 //= require_tree .
 //= bootstrap.js 
 //= bootstrap.min.js 
-//= jquery-1.10.2.js 

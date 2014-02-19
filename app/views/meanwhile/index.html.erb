@@ -8,8 +8,6 @@
                     <span class="icon-bar"></span>
                 </button>
             </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="#about">About</a>
@@ -20,33 +18,33 @@
                     </li>
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container -->
     </nav>
-
     <div class="container">
+        <div class="row" id="title">
+            <h1 id = "titleText">
+              Meanwhile In...
+            </h1>
+        </div>
+        <div class="row" id="input">
+          <div class="col-lg-6">
+            <form>
+              <!-- <input type="text" id="textBox"> -->
+              <button type="button" onclick="submitForm()">Search!</button>
+            </form>
+          </div>
+        </div>
         <div class="row" id="polaroid">
-            <!--<div class="col-lg-6 col-sm-12">-->
             <div class="col-lg-6">
-                <%= image_tag((!(defined?(action)) || action[:url].nil?) ? "instagram_example.jpg" : action[:url],:alt => "Snapshot", :id => "pic")%>                
-                
+                <%= image_tag "instagram_example.jpg", :alt => "Snapshot", :id => "pic"%>
+                <p id="caption">
 
-                <!--<%= form_tag('meanwhile/search', remote: true) do %>
-                  <br>
-                  <%= text_field_tag('text', nil, value: "Charleston, SC") %>
-                  <%= submit_tag("Search") %>-->
-
-
-
-                <% end %>                
+                </p>
             </div>
         </div>
         <div class="row">
-            <!--<div class="col-lg-6 col-sm-12">-->
             <div class="col-lg-6">
                 <h1 style='visibility: hidden;'>Filler</h1>
-                <button type="button" onclick="submitForm()">Send data</button>
             </div>
         </div>
     </div>
@@ -54,29 +52,30 @@
     <!-- JavaScript -->
     
     <script>
-      function submitForm() {
-        alert("checked the button - worked");
-        $.ajax({
-             type:'POST', 
-             url: '/meanwhile/search', 
-             data: $.param({ text: "New York, NY"})
-        });
+      function changePic(path){
+        $('#pic').attr('src',path); 
+      }
+      function changeCaption(text){
+        $('#caption').text(text); 
+      }
+      function changeTitle(text){
+        $('#titleText').text("Meanwile In..." + text); 
       }
 
 
-      // function submitForm() {
-      //       alert("checked the button - worked");
-      //       $.ajax({
-      //            type:'POST', 
-      //            url: '/meanwhile/search/', 
-      //            data: $.param({ text: "New York, NY"}),
-      //            success: function (data) {
-      //               alert('data')
-      //               /*$.each(data, function(key, value) {
-      //                 alert(key + ", " + value)*/
-      //               }
-      //             });
-      //       };
+       function submitForm() {
+            //alert("checked the button - worked");
+            $.ajax({
+                 type:'get', 
+                 url: '/meanwhile/index', 
+                 data: $.param({ text: $("#textBox").val()}),
+                 success: function (data) {
+                  console.log(data);
+                  // alert(data.url);
+                  changePic(data.url);
+                  changeCaption(data.caption);
+                  changeTitle(data.text)
+                 }
+            });
+       }
     </script>
-
-
