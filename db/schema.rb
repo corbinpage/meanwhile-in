@@ -11,9 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140218163132) do
+ActiveRecord::Schema.define(version: 20140219200915) do
 
   create_table "actions", force: true do |t|
+    t.text     "text"
+    t.datetime "start_time"
+    t.text     "url"
+    t.text     "caption"
+    t.text     "username"
+    t.text     "custom1"
+    t.text     "custom2"
+    t.text     "custom3"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "searches", force: true do |t|
     t.text     "text"
     t.datetime "start_time"
     t.text     "url"

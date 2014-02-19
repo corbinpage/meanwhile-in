@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  text: MyText
+  start_time: 2014-02-19 15:09:15
+  url: MyText
+  caption: MyText
+  username: MyText
+  custom1: MyText
+  custom2: MyText
+  custom3: MyText
+
+two:
+  text: MyText
+  start_time: 2014-02-19 15:09:15
+  url: MyText
+  caption: MyText
+  username: MyText
+  custom1: MyText
+  custom2: MyText
+  custom3: MyText

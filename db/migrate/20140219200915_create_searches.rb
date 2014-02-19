@@ -1,6 +1,6 @@
-class CreateActions < ActiveRecord::Migration
+class CreateSearches < ActiveRecord::Migration
   def change
-    create_table :actions do |t|
+    create_table :searches do |t|
       t.text :text
       t.timestamp :start_time
       t.text :url

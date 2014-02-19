@@ -5,21 +5,21 @@ class MeanwhileController < ApplicationController
 
     # text = !first  ? params[:text] : "Charlotte, NC"
 
-    action = Action.new(start_time: Time.now)
-    #action = Action.new(text: text)
-    action.get_result
-    action.save
+    search = Search.new(start_time: Time.now)
+    #search = search.new(text: text)
+    search.get_result
+    search.save
 
     if !first
       respond_to do |format|
-        if action.save
+        if search.save
           #format.html { redirect_to "meanwhile#index", notice: 'Search successfully.' }
           #format.js   {"$('#pic').attr('src', 'instagram_example2.jpg');"}
           #format.js   {alert("Here!");}
-          format.json { render json: action}
+          format.json { render json: search}
         else
           # format.html { redirect_to "meanwhile#index" }
-          format.json { render json: action}
+          format.json { render json: search}
         end
       end
     end

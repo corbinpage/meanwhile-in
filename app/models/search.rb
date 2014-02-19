@@ -1,4 +1,4 @@
-class Action < ActiveRecord::Base
+class Search < ActiveRecord::Base
 
   #Creating an initialize method on the model doesn't work for some reason?
   #def initialize(text)
