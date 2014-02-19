@@ -36,7 +36,9 @@ class Action < ActiveRecord::Base
     d = j["data"].select {|d| d["type"].match("image")}
     i = rand(0...d.count)
 
-    self.caption = d[i]["caption"]["text"]
+    puts d[i].inspect
+
+    self.caption = d[i]["caption"].nil? ? "" : d[i]["caption"]["text"]
     self.username = d[i]["user"]["username"]
     self.url = d[i]["images"]["standard_resolution"]["url"]
 

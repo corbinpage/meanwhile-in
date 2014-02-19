@@ -9,7 +9,7 @@
                 </button>
             </div>
             <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav" id="footerTable">
                     <li><a href="#about">About</a>
                     </li>
                     <li><a>|</a>
@@ -20,31 +20,29 @@
             </div>
         </div>
     </nav>
-    <div class="container">
+    <div id="titleContainer">
         <div class="row" id="title">
             <h1 id = "titleText">
               Meanwhile In...
             </h1>
+            <button type="button" onclick="submitForm()" id="button">Search!</button>
         </div>
-        <div class="row" id="input">
+    </div>
+    <div class="container">
+<!--         <div class="row" id="input">
           <div class="col-lg-6">
             <form>
-              <!-- <input type="text" id="textBox"> -->
+              <input type="text" id="textBox">
               <button type="button" onclick="submitForm()">Search!</button>
             </form>
           </div>
-        </div>
+        </div> -->
         <div class="row" id="polaroid">
             <div class="col-lg-6">
                 <%= image_tag "instagram_example.jpg", :alt => "Snapshot", :id => "pic"%>
                 <p id="caption">
-
+                    Go forth and explore the World! Having Fun!
                 </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-6">
-                <h1 style='visibility: hidden;'>Filler</h1>
             </div>
         </div>
     </div>

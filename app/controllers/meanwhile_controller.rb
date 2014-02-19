@@ -1,8 +1,5 @@
 class MeanwhileController < ApplicationController
 
-
-
-
   def index
     first = params[:text].nil? 
 

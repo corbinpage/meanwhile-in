@@ -1,6 +1,6 @@
 body {
-	margin-top: 50px;
-	margin-bottom: 50px;
+	margin-top: 10px;
+	margin-bottom: 100px;
 	background: none;
 }
 
@@ -27,6 +27,11 @@ body {
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
+  border-color: white;
+  border-top: 55px;
+  border-bottom: 188px;
+  border-left: 46px;
+  border-right: 46px; 
 }
 
 #input {
@@ -34,4 +39,23 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
+
+#titleText {
+  color: #7F2A06;
+  font-family: 'Oleo Script Swash Caps', cursive;
+  font-size: 72px;
+  text-align:center;
+}
+
+#footerTable {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#button {
+  margin-left: 800px;
+}
+
+
+
 
