@@ -1,20 +1,20 @@
-    <nav class="navbar navbar-fixed-bottom navbar-inverse" role="navigation">
+    <nav class="navbar navbar-fixed-bottom navbar-inverse" role="navigation" id="footerBar">
         <div class="container">
-            <div class="navbar-header">
+<!--             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-            </div>
+            </div> -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav" id="footerTable">
-                    <li><a href="#about">About</a>
+                    <li><a id = "aboutLink" href="#about">About</a>
                     </li>
                     <li><a>|</a>
                     </li>
-                    <li><a href="#contact">Contact</a>
+                    <li><a id = "contactLink" href="#contact">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -34,14 +34,17 @@
             <div class="col-lg-6" id="picContainer">
                 <%= image_tag "instagram_example.jpg", :alt => "Snapshot", :id => "pic"%>
             </div>
+            <div id="captionSpace">
+                <p id="caption">Go forth and explore the World! Having Fun!</p>
+            </div>
         </div>
-        <div class="row" id="captionRow">
+<!--         <div class="row" id="captionRow">
             <div class="col-lg-6" id="captionColumn">
               <div id="captionSpace">
                 <p id="caption">Go forth and explore the World! Having Fun!</p>
               </div>
             </div>
-        </div>
+        </div> -->
     </div>
     <!-- JavaScript -->
     
