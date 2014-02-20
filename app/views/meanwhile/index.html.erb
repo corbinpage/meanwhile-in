@@ -1,20 +1,12 @@
     <nav class="navbar navbar-fixed-bottom navbar-inverse" role="navigation" id="footerBar">
         <div class="container">
-<!--             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div> -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav" id="footerTable">
-                    <li><a id = "aboutLink" href="#about">About</a>
+                    <li><a id = "aboutLink" href="https://github.com/corbinpage/meanwhile-in">About</a>
                     </li>
                     <li><a>|</a>
                     </li>
-                    <li><a id = "contactLink" href="#contact">Contact</a>
+                    <li><a id = "contactLink" href="https://twitter.com/corbin_page">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -25,20 +17,31 @@
             <h1 id = "titleText">
               Meanwhile In...
             </h1>
-<!--             <button type="button" onclick="submitForm()" id="button">Search!</button> -->
         </div>
     </div>
     <div class="container">
+    <table>
+      <tr>
+        <td>
         <div class="row" id="polaroid">
           <button type="button" onclick="submitForm()" id="button">Explore!</button>
             <div class="col-lg-6" id="picContainer">
                 <%= image_tag "instagram_example.jpg", :alt => "Snapshot", :id => "pic"%>
             </div>
         </div>
+
+        </td>
+      </tr>
+      <tr>
+        <td>
         <div id="captionSpace">
             <p id="caption">Go forth and explore the World! Having Fun!</p>
         </div>
+        </td>
+      </tr>
+    </table>
     </div>
+
     <!-- JavaScript -->
     
     <script>
