@@ -10,32 +10,60 @@ body {
 }
 
 #polaroid {
-    height:720px;
-    background-color:white;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    -webkit-box-shadow: 2px 2px 4px #888;
-    -moz-box-shadow: 2px 2px 4px #888;
-    box-shadow: 2px 2px 4px #888;
+    clear:both;
+}
+
+#picContainer {
+    clear:both; 
 }
 
 #pic {
+  position: absolute;
+  display: block;
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
-  border-color: white;
-  border-top: 55px;
-  border-bottom: 188px;
-  border-left: 46px;
-  border-right: 46px; 
+  border: 30px solid white;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px; 
+  border-radius: 3px;
+  -webkit-box-shadow: 2px 0px 4px #888;
+  -moz-box-shadow: 2px 0px 4px #888;
+  box-shadow: 2px 0px 4px #888;
 }
 
-#input {
+#button {
+  position: absolute;
   margin-top: 10px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: -80px;
+  height: 80px;
+  width: 80px;
+  -moz-border-radius: 40px;
+  -webkit-border-radius: 40px;  
+  border-width:2px;
+  border: 2px solid #FFFFFF;  
+  background-color: #4140D1;
+  color: #FFFFFF;
 }
+
+#captionRow {
+  display: block;
+  position: relative;
+
+}
+
+#captionSpace {
+  width: 650px;
+  height: 120px;
+  background-color:white;
+}
+
+
+#caption {
+  position: relative;
+  display: block;
+}
+
 
 #titleText {
   color: #7F2A06;
@@ -48,11 +76,3 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-
-#button {
-  margin-left: 800px;
-}
-
-
-
-

@@ -25,28 +25,24 @@
             <h1 id = "titleText">
               Meanwhile In...
             </h1>
-            <button type="button" onclick="submitForm()" id="button">Search!</button>
+<!--             <button type="button" onclick="submitForm()" id="button">Search!</button> -->
         </div>
     </div>
     <div class="container">
-<!--         <div class="row" id="input">
-          <div class="col-lg-6">
-            <form>
-              <input type="text" id="textBox">
-              <button type="button" onclick="submitForm()">Search!</button>
-            </form>
-          </div>
-        </div> -->
         <div class="row" id="polaroid">
-            <div class="col-lg-6">
+          <button type="button" onclick="submitForm()" id="button">Explore!</button>
+            <div class="col-lg-6" id="picContainer">
                 <%= image_tag "instagram_example.jpg", :alt => "Snapshot", :id => "pic"%>
-                <p id="caption">
-                    Go forth and explore the World! Having Fun!
-                </p>
+            </div>
+        </div>
+        <div class="row" id="captionRow">
+            <div class="col-lg-6" id="captionColumn">
+              <div id="captionSpace">
+                <p id="caption">Go forth and explore the World! Having Fun!</p>
+              </div>
             </div>
         </div>
     </div>
-
     <!-- JavaScript -->
     
     <script>
