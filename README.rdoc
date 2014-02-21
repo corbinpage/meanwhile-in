@@ -1,6 +1,6 @@
 == Meanwhile-In Web App
 
-A simple and delightful 'Meanwhile In' meme generator 
+A simple and delightful 'Meanwhile In' meme generator.
 
 ‘Meanwhile In’ memes provide a comical view of daily life in a specific place in the world. This application creates a real-world equivalent of these memes using actual public posts from Instagram. Here’s the result:
 
