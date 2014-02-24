@@ -1,17 +1,4 @@
-    <nav class="navbar navbar-fixed-bottom navbar-inverse" role="navigation" id="footerBar">
-        <div class="container">
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav" id="footerTable">
-                    <li><a id = "aboutLink" href="https://github.com/corbinpage/meanwhile-in" target="_blank">About</a>
-                    </li>
-                    <li><a>|</a>
-                    </li>
-                    <li><a id = "contactLink" href="https://twitter.com/corbin_page" target="_blank">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<div id="bodyContainer">
     <div id="titleContainer">
         <div class="row" id="title">
             <h1 id = "titleText">
@@ -19,19 +6,15 @@
             </h1>
         </div>
     </div>
-    <!-- <div class="container"> -->
-    <div>
-    <table>
+
+    <div id="picContainer">
+    <table id="picTable">
       <tr>
         <td>
-        <!-- <div class="row" id="polaroid"> -->
-          <button type="button" onclick="submitForm()" id="button">Explore!</button>
-          <!-- <div class="col-lg-6" id="picContainer"> -->
+          <!-- <button type="button" onclick="submitForm()" id="button">Explore!</button> -->
           <div id="picContainer">
               <%= image_tag "instagram_example.jpg", :alt => "Snapshot", :id => "pic", :onclick => "submitForm()"%>
           </div>
-        <!-- </div> -->
-
         </td>
       </tr>
       <tr>
@@ -43,6 +26,15 @@
       </tr>
     </table>
     </div>
+</div>
+
+<nav role="navigation" id="footerBar">
+  <div id="footerLinks">
+  <a id = "aboutLink" href="https://github.com/corbinpage/meanwhile-in" target="_blank">About</a>
+  |
+  <a id = "contactLink" href="https://twitter.com/corbin_page" target="_blank">Contact</a>
+  </div>  
+</nav>
 
     <!-- JavaScript -->
     
@@ -56,17 +48,20 @@
       function changeTitle(text){
         $('#titleText').text("Meanwile In..." + text); 
       }
+      function overlaySpinner(){
+        // Add the code here to overlay the spinner
+      }
+
 
 
        function submitForm() {
-            //alert("checked the button - worked");
+            overlaySpinner();
             $.ajax({
                  type:'get', 
                  url: '/meanwhile/index', 
                  data: $.param({ text: $("#textBox").val()}),
                  success: function (data) {
                   console.log(data);
-                  // alert(data.url);
                   changePic(data.url);
                   changeCaption(data.caption);
                   changeTitle(data.text)

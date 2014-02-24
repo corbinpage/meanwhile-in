@@ -7,13 +7,9 @@ class MeanwhileController < ApplicationController
     search.get_result
     search.save
 
-    if !first
+    unless first 
       respond_to do |format|
-        if search.save
-          format.json { render json: search}
-        else
-          format.json { render json: search}
-        end
+        format.json { render json: search}
       end
     end
 
