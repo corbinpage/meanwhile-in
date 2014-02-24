@@ -9,11 +9,6 @@ body {
   background-size: cover;
 }
 
-/*#polaroid {
-    clear:both;
-    display: inline-block;
-}*/
-
 #picContainer {
     clear:both; 
 }
@@ -29,6 +24,8 @@ body {
   -webkit-box-shadow: 2px 0px 4px #888;
   -moz-box-shadow: 2px 0px 4px #888;
   box-shadow: 2px 0px 4px #888;
+  height: 510px;
+  width: 510px;
 }
 
 #button {
@@ -74,6 +71,7 @@ body {
   margin-left: 40px;
   margin-right: 40px;
   font-size: 16px;
+  max-width: 450px;
 }
 
 

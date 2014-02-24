@@ -23,7 +23,7 @@ class Search < ActiveRecord::Base
 
     lat, lng, self.text = locations[rand(0..5)]
 
-    s = "https://api.instagram.com/v1/media/search?lat=#{lat}&lng=#{lng}&client_id=#{client_id}"
+    s = "https://api.instagram.com/v1/media/search?lat=#{lat}&lng=#{lng}&client_id=#{client_id}&distance=5000"
 
     uri = URI.parse(s)
     res = Net::HTTP.get_response(uri)

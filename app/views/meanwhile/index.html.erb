@@ -2,11 +2,11 @@
         <div class="container">
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav" id="footerTable">
-                    <li><a id = "aboutLink" href="https://github.com/corbinpage/meanwhile-in">About</a>
+                    <li><a id = "aboutLink" href="https://github.com/corbinpage/meanwhile-in" target="_blank">About</a>
                     </li>
                     <li><a>|</a>
                     </li>
-                    <li><a id = "contactLink" href="https://twitter.com/corbin_page">Contact</a>
+                    <li><a id = "contactLink" href="https://twitter.com/corbin_page" target="_blank">Contact</a>
                     </li>
                 </ul>
             </div>
@@ -19,16 +19,18 @@
             </h1>
         </div>
     </div>
-    <div class="container">
+    <!-- <div class="container"> -->
+    <div>
     <table>
       <tr>
         <td>
-        <div class="row" id="polaroid">
+        <!-- <div class="row" id="polaroid"> -->
           <button type="button" onclick="submitForm()" id="button">Explore!</button>
-            <div class="col-lg-6" id="picContainer">
-                <%= image_tag "instagram_example.jpg", :alt => "Snapshot", :id => "pic", :onclick => "submitForm()"%>
-            </div>
-        </div>
+          <!-- <div class="col-lg-6" id="picContainer"> -->
+          <div id="picContainer">
+              <%= image_tag "instagram_example.jpg", :alt => "Snapshot", :id => "pic", :onclick => "submitForm()"%>
+          </div>
+        <!-- </div> -->
 
         </td>
       </tr>
