@@ -40,13 +40,14 @@ body {
   height: 510px;
   width: 510px;
   z-index: 0;
-
-  /*overflow:auto; */
-/*  background-color: #C2C2C2;
-  padding: 1px;*/
 }
 
-/*#picOutline {
+/*
+  overflow:auto;
+  background-color: #C2C2C2;
+  padding: 1px;
+
+#picOutline {
   border: 5px solid black;
   background-color: #C2C2C2;
   overflow:auto; 
