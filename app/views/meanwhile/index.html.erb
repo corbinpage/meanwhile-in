@@ -13,7 +13,11 @@
         <td>
           <!-- <button type="button" onclick="submitForm()" id="button">Explore!</button> -->
           <div id="picContainer">
+            <div id="picOutline">
               <%= image_tag "instagram_example.jpg", :alt => "Snapshot", :id => "pic", :onclick => "submitForm()"%>
+            </div>
+            <%= image_tag "waiting.gif", :alt => "Loading...", :id => "waiting"%>
+            <!-- <img id="waiting" src="waiting.gif" alt="Loading..."> -->
           </div>
         </td>
       </tr>
@@ -29,16 +33,18 @@
 </div>
 
 <nav role="navigation" id="footerBar">
-  <div id="footerLinks">
-  <a id = "aboutLink" href="https://github.com/corbinpage/meanwhile-in" target="_blank">About</a>
-  |
-  <a id = "contactLink" href="https://twitter.com/corbin_page" target="_blank">Contact</a>
+  <div id="footerDiv">
+    <a class = "footerLinks" href="https://github.com/corbinpage/meanwhile-in" target="_blank">About</a>
+    <div class = "footerText">|</div>
+    <a class = "footerLinks" href="https://twitter.com/corbin_page" target="_blank">Contact</a>
   </div>  
 </nav>
 
     <!-- JavaScript -->
     
     <script>
+
+
       function changePic(path){
         $('#pic').attr('src',path); 
       }
@@ -49,7 +55,7 @@
         $('#titleText').text("Meanwile In..." + text); 
       }
       function overlaySpinner(){
-        // Add the code here to overlay the spinner
+        $('#waiting').css('visibility','visible');
       }
 
 
@@ -63,6 +69,7 @@
                  success: function (data) {
                   console.log(data);
                   changePic(data.url);
+                  $('#waiting').css('visibility','hidden');
                   changeCaption(data.caption);
                   changeTitle(data.text)
                  }
