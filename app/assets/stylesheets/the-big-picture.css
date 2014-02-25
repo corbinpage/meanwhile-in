@@ -12,9 +12,17 @@ body {
   height: 100%;
 }
 
+#titleText {
+  color: #7F2A06;
+  font-family: 'Oleo Script Swash Caps', cursive;
+  font-size: 72px;
+  text-align:center;
+}
+
 #bodyContainer {
   margin-top: 10px;
   margin-bottom: 90px;
+  width:100%;
 }
 
 #picContainer {
@@ -24,43 +32,44 @@ body {
 #picTable {
   margin-left: auto;
   margin-right: auto;
+/*  -moz-transform: rotate(3deg);
+  -webkit-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  transform: rotate(3deg);*/
+}
+
+
+#polaroid {
+  overflow: visible;
 }
 
 #pic {
   position: absolute;
   margin-left: auto;
   margin-right: auto;
-  border: 40px solid white;
-  border-bottom: 115px solid white;
+  border: 40px solid #fafafa;
+  border-bottom: 115px solid #fafafa;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px; 
   border-radius: 3px;
   -webkit-box-shadow: 2px 0px 4px #888;
   -moz-box-shadow: 2px 0px 4px #888;
   box-shadow: 2px 0px 4px #888;
-  height: 510px;
-  width: 510px;
+  height: 480px;
+  width: 480px;
   z-index: 0;
-}
-
-/*
-  overflow:auto;
-  background-color: #C2C2C2;
+  background-color: #E3E3E3;
   padding: 1px;
-
-#picOutline {
-  border: 5px solid black;
-  background-color: #C2C2C2;
-  overflow:auto; 
-  z-index: -1;
-}*/
+  clear:both;
+}
 
 #waiting {
   position: relative;
-  margin-left: 231px;
-  margin-right: 231px;
-  margin-top: 231px;
-  margin-bottom: 231px;
+  margin-left: 216px;
+  margin-right: 216px;
+  margin-top: 216px;
+  margin-bottom: 216px;
   height: 128px;
   width: 128px;
   z-index: 2;
@@ -69,7 +78,7 @@ body {
 
 #captionSpace {
   visibility: hidden;
-  margin-top: -8px;
+  margin-top: 30px;
   width: 100%;
   height: 115px;
   display: block;
@@ -93,14 +102,6 @@ body {
   margin-right: 40px;
   font-size: 16px;
   max-width: 450px;
-}
-
-
-#titleText {
-  color: #7F2A06;
-  font-family: 'Oleo Script Swash Caps', cursive;
-  font-size: 72px;
-  text-align:center;
 }
 
 #footerBar {

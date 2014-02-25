@@ -6,18 +6,14 @@
             </h1>
         </div>
     </div>
-
     <div id="picContainer">
+
     <table id="picTable">
       <tr>
         <td>
-          <!-- <button type="button" onclick="submitForm()" id="button">Explore!</button> -->
-          <div id="picContainer">
-            <div id="picOutline">
+          <div id="polaroid">
               <%= image_tag "instagram_example.jpg", :alt => "Snapshot", :id => "pic", :onclick => "submitForm()"%>
-            </div>
             <%= image_tag "waiting.gif", :alt => "Loading...", :id => "waiting"%>
-            <!-- <img id="waiting" src="waiting.gif" alt="Loading..."> -->
           </div>
         </td>
       </tr>
@@ -29,9 +25,10 @@
         </td>
       </tr>
     </table>
+
+
     </div>
 </div>
-
 <nav role="navigation" id="footerBar">
   <div id="footerDiv">
     <a class = "footerLinks" href="https://github.com/corbinpage/meanwhile-in" target="_blank">About</a>
