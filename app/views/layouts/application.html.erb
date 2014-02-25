@@ -3,7 +3,9 @@
 <!-- The full page image background will only work if the html has the custom class set to it! Don't delete it! -->
 
 <head>
-      <title>Meanwhile In...</title>
+
+
+    <title>Meanwhile In...</title>
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <link href='http://fonts.googleapis.com/css?family=Oleo+Script+Swash+Caps' rel='stylesheet' type='text/css'>
 
@@ -29,4 +31,15 @@
 <%= yield %>
 
 </body style="background: none;background: url(paper-background.jpg) no-repeat center center fixed;">
+
+<footer>
+<nav role="navigation" id="footerBar">
+  <div id="footerDiv">
+    <a class = "footerLinks" href="https://github.com/corbinpage/meanwhile-in" target="_blank">About</a>
+    <div class = "footerText">|</div>
+    <a class = "footerLinks" href="https://twitter.com/corbin_page" target="_blank">Contact</a>
+  </div>  
+</nav>
+</footer>
+
 </html>
