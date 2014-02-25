@@ -42,6 +42,9 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+# Adding geocode gem
+#gem "geocoder"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

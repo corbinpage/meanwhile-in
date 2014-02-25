@@ -5,6 +5,9 @@
               Meanwhile In...
             </h1>
         </div>
+        <form name="search">
+          <input type="text" name="searchBox" id="textBox" value="Brooklyn">
+        </form>
     </div>
     <div id="picContainer">
 
@@ -25,8 +28,6 @@
         </td>
       </tr>
     </table>
-
-
     </div>
 </div>
 <nav role="navigation" id="footerBar">
@@ -55,14 +56,12 @@
         $('#waiting').css('visibility','visible');
       }
 
-
-
        function submitForm() {
             overlaySpinner();
             $.ajax({
                  type:'get', 
                  url: '/meanwhile/index', 
-                 data: $.param({ text: $("#textBox").val()}),
+                 data: $.param({ text: $("#textBox").val(), refresh: true}),
                  success: function (data) {
                   console.log(data);
                   changePic(data.url);

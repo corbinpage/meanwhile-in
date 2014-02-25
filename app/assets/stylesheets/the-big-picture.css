@@ -97,11 +97,16 @@ body {
   visibility: visible;
   position: relative;
   display: block;
-  margin-top: -25px;
+  margin-top: -75px;
   margin-left: 40px;
   margin-right: 40px;
   font-size: 16px;
   max-width: 450px;
+}
+
+#textBox {
+  display: inline;
+
 }
 
 #footerBar {

@@ -1,10 +1,10 @@
 class MeanwhileController < ApplicationController
 
   def index
-    first = params[:text].nil? 
+    first = params[:refresh].nil? 
 
     search = Search.new(start_time: Time.now)
-    search.get_result
+    search.get_result(first, params[:text])
     search.save
 
     unless first 
