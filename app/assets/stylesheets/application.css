@@ -10,7 +10,6 @@
  *
  *= require_self
  *= require_tree .
- *= bootstrap.min.css
  *= meanwhile.css.scss
  *= the-big-picture.css
  */
