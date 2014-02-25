@@ -16,7 +16,6 @@ class Search < ActiveRecord::Base
       return
     end
 
-
     client_id = INSTA_CLIENT_ID
     client_secret = INSTA_CLIENT_SECRET
 
@@ -43,7 +42,7 @@ class Search < ActiveRecord::Base
 
     api_key = GOOGLE_GEO_API_KEY
 
-    if search_text.nil?
+    if search_text
       locations = {
                     0 =>[40.7143528,74.0059731,"New York"],             # New York
                     1 =>[48.856614,2.3522219000000177,"Paris"],         # Paris
@@ -53,6 +52,7 @@ class Search < ActiveRecord::Base
                     5 =>[51.508515,0.12548719999995228,"London"]        # London
                   }
       return locations[rand(0..5)]
+
     end
 
     s = "https://maps.googleapis.com/maps/api/geocode/json?address=#{uri_substitute(search_text)}&sensor=false&key=#{api_key}"
