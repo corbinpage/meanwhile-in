@@ -20,7 +20,7 @@ MeanwhileIn::Application.configure do
   # config.action_dispatch.rack_cache = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this).
-  config.serve_static_assets = false
+  config.serve_static_assets = true
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
@@ -28,7 +28,7 @@ MeanwhileIn::Application.configure do
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   # False means heroku will not run rake assets:precompile
-  config.assets.compile = true
+  config.assets.compile = false
 
   # Generate digests for assets URLs.
   config.assets.digest = true
