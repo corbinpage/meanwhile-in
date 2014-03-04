@@ -62,13 +62,13 @@ body {
 
 #bodyContainer {
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 35px;
   width:100%;
 }
 
 #picContainer {
   width:100%;
-  height: 700px;
+  /*height: 700px;*/
 }
 
 #picSubcontainer {
@@ -201,12 +201,5 @@ body {
 @media screen and (min-device-width: 768px) and (max-device-width: 1024px){
   /* some CSS here */
 }
-
-/* #### Desktops #### */
-@media screen and (min-width: 1024px){
-  /* some CSS here */
-}
-
-
 
 
