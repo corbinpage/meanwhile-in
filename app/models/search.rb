@@ -3,6 +3,7 @@ class Search < ActiveRecord::Base
   INSTA_CLIENT_SECRET = 'b17108a913f246bb97e6ddc62aba5f76'
   GOOGLE_GEO_API_KEY  = 'AIzaSyDnhRqPgWa7YHYPNNRHoSXxBizLaqDc_fo' # This is app specifc
   
+  MAX_CAPTION_LENGTH = 335
   #Creating an initialize method on the model doesn't work for some reason?
   #def initialize(text)
   #  @text = text
@@ -27,14 +28,16 @@ class Search < ActiveRecord::Base
     res = Net::HTTP.get_response(uri)
     j = JSON.parse(res.body)
 
-    d = j["data"].select {|d| d["type"].match("image")}
-    i = rand(0...d.count)
+    images = j["data"].select {|d| d["type"].match("image")}
 
-    #puts d[i].inspect
+    self.custom3 = images.count.to_s
 
-    self.caption = d[i]["caption"].nil? ? "" : d[i]["caption"]["text"]
-    self.username = d[i]["user"]["username"]
-    self.url = d[i]["images"]["standard_resolution"]["url"]
+    image = get_random_image(images)
+
+    self.custom2 = image["id"]
+    self.caption = image["caption"].nil? ? "" : trim_caption_text(image["caption"]["text"])
+    self.username = image["user"]["username"]
+    self.url = image["images"]["standard_resolution"]["url"]
 
   end
 
@@ -42,7 +45,7 @@ class Search < ActiveRecord::Base
 
     api_key = GOOGLE_GEO_API_KEY
 
-    if search_text
+    if !search_text || search_text.downcase.match('random')
       locations = {
                     0 =>[40.7143528,74.0059731,"New York"],             # New York
                     1 =>[48.856614,2.3522219000000177,"Paris"],         # Paris
@@ -52,7 +55,6 @@ class Search < ActiveRecord::Base
                     5 =>[51.508515,0.12548719999995228,"London"]        # London
                   }
       return locations[rand(0..5)]
-
     end
 
     s = "https://maps.googleapis.com/maps/api/geocode/json?address=#{uri_substitute(search_text)}&sensor=false&key=#{api_key}"
@@ -62,12 +64,30 @@ class Search < ActiveRecord::Base
     j = JSON.parse(res.body)
 
     coordinates = j["results"][0]["geometry"]["location"]
+    # formatted_search_text = j["results"][0]["formatted_address"] # Gets full address
+    formatted_search_text = search_text.split(' ').collect(&:capitalize).join(' ')
 
-    [coordinates["lat"],coordinates["lng"],search_text]
+    [coordinates["lat"],coordinates["lng"],formatted_search_text]
+  end
+
+  def get_random_image(images)
+    recent_searches = Search.where("custom1 = ? AND custom2 IN (?)", self.custom1,images.collect{|i|i["id"]})
+    # custom1 is IP address, custom2 is Instagram's media ID
+
+    if recent_searches.count == 0
+      return images[rand(0...images.count)] #if !recents
+    else
+      images.select {|i| !recent_searches.custom2.include? i["id"]}.sample
+    end
   end
 
   def uri_substitute(string)
     string.gsub(/\s/,'+').gsub(/"/,"%22")
+  end
+
+  def trim_caption_text(text)
+    return text if text.length <= MAX_CAPTION_LENGTH
+    "#{text[1..MAX_CAPTION_LENGTH]}..."
   end
 
 end

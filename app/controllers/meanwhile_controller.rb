@@ -3,7 +3,7 @@ class MeanwhileController < ApplicationController
   def index
     first = params[:refresh].nil? 
 
-    search = Search.new(start_time: Time.now)
+    search = Search.new(start_time: Time.now, custom1: request.remote_ip)
     search.get_result(first, params[:text])
     search.save
 
@@ -12,11 +12,5 @@ class MeanwhileController < ApplicationController
         format.json { render json: search}
       end
     end
-
   end
-
 end
-
-
-
-
