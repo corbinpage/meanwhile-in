@@ -1,16 +1,20 @@
 class MeanwhileController < ApplicationController
 
   def index
-    first = params[:refresh].nil? 
+    search = Search.new(start_time: Time.now, custom1: request.remote_ip.to_s.chomp)
+    search.get_result(params[:text])
 
-    search = Search.new(start_time: Time.now, custom1: request.remote_ip)
-    search.get_result(first, params[:text])
+    puts "what's in Search | " + search.inspect
+
+
     search.save
+    @data = search
 
-    unless first 
+    unless params[:refresh].nil? # Checks whether it's the initial load
       respond_to do |format|
-        format.json { render json: search}
+        format.json {render json: search}
       end
     end
+    #Loads default erb if it's the initial load => index.html.erb
   end
 end

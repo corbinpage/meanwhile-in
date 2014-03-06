@@ -2,57 +2,56 @@
         <div class="row" id="titleRow">
             <div id="titleWrapper">
               <h1 id = "titleText">Meanwhile In: </h1>
-              <input type="text" name="searchBox" id="textBox" autofocus value="Brooklyn" onfocus="this.value = this.value;">
+              <%= text_field_tag "textBox", nil, autofocus: true, name: "searchBox",
+               value: @data.text, onfocus: "this.value = this.value;"%>
             </div>
         </div>
     <div id="picContainer">
       <div id="picSubcontainer">
-
     <table id="picTable1">
       <tr>
         <td>
           <div>
-              <%= image_tag "instagram_example.jpg", :alt => "Snapshot", :id => "pic1", :class => "pic", :onclick => "submitForm()"%>
-            <%= image_tag "waiting.gif", :alt => "Loading...", :id => "waiting1", :class => "waiting"%>
+              <%= image_tag @data.url, alt: @data.username, id: "pic1",
+               class: "pic", onclick: "getNewPic()"%>
+              <%= image_tag "waiting.gif", alt: "Loading...", id: "waiting1", class: "waiting"%>
+              <%= image_tag "click_here.png", alt: "Click Here!", id: "click_here", class: "click_here"%>
           </div>
         </td>
       </tr>
       <tr>
         <td>
         <div class="captionSpace">
-            <p class="caption">Go forth and explore the World! Having Fun!</p>
+          <%= content_tag(:p, @data.caption, class: "caption") %>
         </div>
         </td>
       </tr>
     </table>
-
     <table id="picTable2">
       <tr>
         <td>
           <div>
-              <%= image_tag "instagram_example.jpg", :alt => "Snapshot", :class => "pic", :onclick => "submitForm()"%>
-              <%= image_tag "waiting.gif", :alt => "Loading...", :class => "waiting"%>
+              <%= image_tag @data.url, alt: @data.username, id: "pic1",
+               class: "pic", onclick: "getNewPic()"%>
+              <%= image_tag "waiting.gif", alt: "Loading...", id: "waiting1", class: "waiting"%>
           </div>
         </td>
       </tr>
       <tr>
         <td>
         <div class="captionSpace">
-            <p class="caption">Go forth and explore the World! Having Fun!</p>
+          <%= content_tag(:p, "Placeholder", class: "caption") %>
         </div>
         </td>
       </tr>
     </table>
-
-
     </div>
   </div>
 </div>
-
     <!-- JavaScript -->
-    
     <script>
-      function changePic(path){
+      function changePic(path,username){
+        $('#pic1').attr('alt',username);
         $('#pic1').attr('src',path);
         $('#pic1').load(function(){
           $('#waiting1').css('visibility','hidden');
@@ -62,29 +61,34 @@
         $('#textBox').val(text); 
         $('#textBox').focus();
       }
-      function submitForm() {
-            $('.waiting').css('visibility','visible');
+      function getNewPic() {
+            $('#waiting1').css('visibility','visible');
             $.ajax({
                  type:'get', 
                  url: '/meanwhile/index', 
                  data: $.param({ text: $("#textBox").val(), refresh: true}),
+                 timeout: 5000,
+                 error: function(x, textStatus, m) {
+                  $('#waiting1').css('visibility','hidden');
+                  console.log(textStatus);
+                 },
                  success: function (data) {
-                  // console.log(data);
-                  changePic(data.url);
+                  console.log(data);
+                  changePic(data.url,data.username);
                   $('.caption').text(data.caption); 
                   changeTextbox(data.text);
                  }
             });
       }
-
       $('document').ready(function(){
+        $('#waiting1').css('visibility','visible');
+        $('#pic1').load(function(){
+          $('#waiting1').css('visibility','hidden');
+        });
         $('#textBox').keypress(function(e){
-          if(e.which == 13){        //Enter key pressed
+          if(e.which == 13){          //Enter key pressed
               $('#pic1').click();    //Trigger search button click event
           }
         });
-
-        // $('#textBox').focus();
-        // $('#textBox').select();
       })
     </script>
