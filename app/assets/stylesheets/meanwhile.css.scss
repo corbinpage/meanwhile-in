@@ -239,7 +239,7 @@
   }
 
   #textBox {
-    width: 200px;
+    width: 80%;
     display: block;
     color: #7F2A06;
     font-family: 'Oleo Script Swash Caps', cursive;
@@ -255,12 +255,15 @@
   #bodyContainer {
     margin-top: 10px;
     margin-bottom: 35px;
-    /*margin-left: 5px;*/
     width:100%;
+    width: 280;
+    height: 400px;
   }
 
   #picContainer {
     width:100%;
+    width: 280;
+    height: 400px;
   }
 
   #picSubcontainer {
@@ -269,8 +272,6 @@
     margin-right: auto;
     display: table;
     overflow:auto; 
-    width: 260px;
-    height: 400px;
   }
 
   #picTable1 {
@@ -354,7 +355,7 @@
   }
 
   #footerDiv{
-    width:100%;
+    width:130px;
     margin-left: auto;
     margin-right: auto;
   }
