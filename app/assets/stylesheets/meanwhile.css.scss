@@ -255,7 +255,7 @@
   #bodyContainer {
     margin-top: 10px;
     margin-bottom: 35px;
-    margin-left: 5px;
+    margin-left: 15px;
     width:100%;
   }
 
@@ -269,9 +269,8 @@
     margin-right: auto;
     display: table;
     overflow:auto; 
-    width: 562px;
-    height: 637px;
-
+/*    width: 562px;
+    height: 637px;*/
   }
 
   #picTable1 {
@@ -317,12 +316,12 @@
 
   .waiting {
     position: relative;
-    margin-left: 216px;
-    margin-right: 216px;
-    margin-top: 216px;
-    margin-bottom: 216px;
-    height: 128px;
-    width: 128px;
+    margin-left: 108px;
+    margin-right: 108px;
+    margin-top: 108px;
+    margin-bottom: 108px;
+    height: 64px;
+    width: 64px;
     z-index:5;
     visibility:hidden;
   }
