@@ -255,7 +255,7 @@
   #bodyContainer {
     margin-top: 10px;
     margin-bottom: 35px;
-    margin-left: 15px;
+    margin-left: 5px;
     width:100%;
   }
 
@@ -269,7 +269,7 @@
     margin-right: auto;
     display: table;
     overflow:auto; 
-    width: 280px;
+    width: 265px;
     height: 400px;
   }
 
@@ -297,7 +297,7 @@
   .pic {
     position: absolute;
     border: 20px solid #fafafa;
-    border-bottom: 158px solid #fafafa;
+    border-bottom: 70px solid #fafafa;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px; 
     border-radius: 2px;
@@ -326,18 +326,6 @@
     visibility:hidden;
   }
 
-/*  .click_here {
-    position: relative;
-    margin-left: 152px;
-    margin-right: 152px;
-    margin-top: 152px;
-    margin-bottom: 152px;
-    height: 256px;
-    width: 256px;
-    z-index:10;
-    visibility:visible;
-  }*/
-
   .captionSpace {
     visibility: hidden;
     margin-top: 30px;
@@ -352,11 +340,10 @@
     visibility: visible;
     position: relative;
     display: block;
-    margin-top: -75px;
-    margin-left: 40px;
-    margin-right: 40px;
-    font-size: 16px;
-    max-width: 450px;
+    margin-top: -30px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 12px;
   }
 
   #footerBar {
