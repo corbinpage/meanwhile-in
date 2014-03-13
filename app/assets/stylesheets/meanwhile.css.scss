@@ -2,216 +2,399 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-* {
-  margin: 0;
-}
+@media screen and (min-device-width: 768px) {
+  * {
+    margin: 0;
+  }
 
-body {
-  background: none;
-  background: url(paper-background.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  height: 100%;
-}
+  body {
+    background: none;
+    background: url(paper-background.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+  }
 
-#titleRow {
-  width: 100%;
-}
+  #titleRow {
+    width: 100%;
+  }
 
-#titleWrapper {
+  #titleWrapper {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto; 
+      display: table;
+      white-space: nowrap;
+      overflow: hidden;
+  }
+
+  #titleText {
+    color: #7F2A06;
+    font-family: 'Oleo Script Swash Caps', cursive;
+    font-size: 50px;
     text-align: center;
+    display: inline;
     margin-left: auto;
     margin-right: auto; 
+  }
+
+  #textBox {
+    width: 250px;
+    display: inline;
+    color: #7F2A06;
+    font-family: 'Oleo Script Swash Caps', cursive;
+    font-size: 50px;
+    text-indent: 5px;
+    background-color: rgba(255,255,255,0.5); 
+    border: 3px solid rgba(255,255,255,0.5);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px; 
+    border-radius: 4px;
+  }
+
+  #bodyContainer {
+    margin-top: 10px;
+    margin-bottom: 35px;
+    width:100%;
+  }
+
+  #picContainer {
+    width:100%;
+    /*height: 700px;*/
+  }
+
+  #picSubcontainer {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
     display: table;
-    white-space: nowrap;
-    overflow: hidden;
-}
+    overflow:auto; 
+    width: 562px;
+    height: 637px;
 
-#titleText {
-  color: #7F2A06;
-  font-family: 'Oleo Script Swash Caps', cursive;
-  font-size: 50px;
-  text-align: center;
-  display: inline;
-  margin-left: auto;
-  margin-right: auto; 
-}
+  }
 
-#textBox {
-  width: 250px;
-  display: inline;
-  color: #7F2A06;
-  font-family: 'Oleo Script Swash Caps', cursive;
-  font-size: 50px;
-  text-indent: 5px;
-  background-color: rgba(255,255,255,0.5); 
-  border: 3px solid rgba(255,255,255,0.5);
-  -webkit-border-radius: 4px;
-  -moz-border-radius: 4px; 
-  border-radius: 4px;
-}
+  #picTable1 {
+    position: absolute;
+    z-index: 2;
+    -moz-transform: rotate(-.5deg);
+    -webkit-transform: rotate(-.5deg);
+    -ms-transform: rotate(-.5deg);
+    -o-transform: rotate(-.5deg);
+    transform: rotate(-.5deg);
+  }
 
-/*#textBox:focus {
-  /*outline: none;
-  -webkit-box-shadow: 5px #888;
-  -moz-box-shadow: 5px #888;
-  box-shadow: 5px #888;
-}*/
+  #picTable2 {
+    visibility: visible;
+    position: absolute;
+    z-index: 1;
+    -moz-transform: rotate(2.5deg);
+    -webkit-transform: rotate(2.5deg);
+    -ms-transform: rotate(2.5deg);
+    -o-transform: rotate(2.5deg);
+    transform: rotate(2.5deg);
+  }
 
-#bodyContainer {
-  margin-top: 10px;
-  margin-bottom: 35px;
-  width:100%;
-}
+  .pic {
+    position: absolute;
+    border: 40px solid #fafafa;
+    border-bottom: 115px solid #fafafa;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px; 
+    border-radius: 3px;
+    -webkit-box-shadow: 2px 0px 4px 1px #888;
+    -moz-box-shadow: 2px 0px 4px 1px #888;
+    box-shadow: 2px 0px 4px 1px #888;
+    height: 480px;
+    width: 480px;
+    z-index: 0;
+    background-color: #E3E3E3;
+    padding: 1px;
+    clear:both;
+    cursor:pointer;
+  }
 
-#picContainer {
-  width:100%;
-  /*height: 700px;*/
-}
+  .waiting {
+    position: relative;
+    margin-left: 216px;
+    margin-right: 216px;
+    margin-top: 216px;
+    margin-bottom: 216px;
+    height: 128px;
+    width: 128px;
+    z-index:5;
+    visibility:hidden;
+  }
 
-#picSubcontainer {
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  display: table;
-  overflow:auto; 
-  width: 562px;
-  height: 637px;
+  .click_here {
+    position: relative;
+    margin-left: 152px;
+    margin-right: 152px;
+    margin-top: 152px;
+    margin-bottom: 152px;
+    height: 256px;
+    width: 256px;
+    z-index:10;
+    visibility:visible;
+  }
 
-}
+  .captionSpace {
+    visibility: hidden;
+    margin-top: 30px;
+    width: 100%;
+    height: 115px;
+    display: block;
+    position: relative;
+    text-overflow: ellipsis;
+  }
 
-#picTable1 {
-  position: absolute;
-  z-index: 2;
-  -moz-transform: rotate(-.5deg);
-  -webkit-transform: rotate(-.5deg);
-  -ms-transform: rotate(-.5deg);
-  -o-transform: rotate(-.5deg);
-  transform: rotate(-.5deg);
-}
+  .caption {
+    visibility: visible;
+    position: relative;
+    display: block;
+    margin-top: -75px;
+    margin-left: 40px;
+    margin-right: 40px;
+    font-size: 16px;
+    max-width: 450px;
+  }
 
-#picTable2 {
-  visibility: visible;
-  position: absolute;
-  z-index: 1;
-  -moz-transform: rotate(2.5deg);
-  -webkit-transform: rotate(2.5deg);
-  -ms-transform: rotate(2.5deg);
-  -o-transform: rotate(2.5deg);
-  transform: rotate(2.5deg);
-}
+  #footerBar {
+    background-color: #7F2A06;
+    border-color: #7F2A06;
+    width:100%;
+    height:35px;
+  }
 
-.pic {
-  position: absolute;
-  border: 40px solid #fafafa;
-  border-bottom: 115px solid #fafafa;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px; 
-  border-radius: 3px;
-  -webkit-box-shadow: 2px 0px 4px 1px #888;
-  -moz-box-shadow: 2px 0px 4px 1px #888;
-  box-shadow: 2px 0px 4px 1px #888;
-  height: 480px;
-  width: 480px;
-  z-index: 0;
-  background-color: #E3E3E3;
-  padding: 1px;
-  clear:both;
-}
+  #footerDiv{
+    width:130px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-.waiting {
-  position: relative;
-  margin-left: 216px;
-  margin-right: 216px;
-  margin-top: 216px;
-  margin-bottom: 216px;
-  height: 128px;
-  width: 128px;
-  z-index:5;
-  visibility:hidden;
-}
+  .footerText {
+    color:  #999;
+    font-family:sans-serif;
+    line-height: 20px;
+    text-decoration:none;
+    float:left;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px
+  }
 
-.click_here {
-  position: relative;
-  margin-left: 152px;
-  margin-right: 152px;
-  margin-top: 152px;
-  margin-bottom: 152px;
-  height: 256px;
-  width: 256px;
-  z-index:10;
-  visibility:visible;
-}
+  .footerLinks {
+    color:  #999;
+    font-family:sans-serif;
+    line-height: 20px;
+    text-decoration:none;
+    float:left;
+    margin-top: 10px
+  }
 
-.captionSpace {
-  visibility: hidden;
-  margin-top: 30px;
-  width: 100%;
-  height: 115px;
-  display: block;
-  position: relative;
-  text-overflow: ellipsis;
-}
-
-.caption {
-  visibility: visible;
-  position: relative;
-  display: block;
-  margin-top: -75px;
-  margin-left: 40px;
-  margin-right: 40px;
-  font-size: 16px;
-  max-width: 450px;
-}
-
-#footerBar {
-  background-color: #7F2A06;
-  border-color: #7F2A06;
-  width:100%;
-  height:35px;
-}
-
-#footerDiv{
-  width:130px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.footerText {
-  color:  #999;
-  font-family:sans-serif;
-  line-height: 20px;
-  text-decoration:none;
-  float:left;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-top: 10px
-}
-
-.footerLinks {
-  color:  #999;
-  font-family:sans-serif;
-  line-height: 20px;
-  text-decoration:none;
-  float:left;
-  margin-top: 10px
-}
-
-.footerLinks:hover{
-  color:white;
+  .footerLinks:hover{
+    color:white;
+  }
 }
 
 /* #### iPhone 4+ Portrait or Landscape #### */
 @media screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2){
-  /* some CSS here */
+  * {
+    margin: 0;
+  }
+
+  body {
+    background: none;
+    background: url(paper-background.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+  }
+
+  #titleRow {
+    width: 100%;
+  }
+
+  #titleWrapper {
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto; 
+      display: table;
+      white-space: nowrap;
+      overflow: hidden;
+  }
+
+  #titleText {
+    color: #7F2A06;
+    font-family: 'Oleo Script Swash Caps', cursive;
+    font-size: 50px;
+    text-align: center;
+    display: inline;
+    margin-left: auto;
+    margin-right: auto; 
+  }
+
+  #textBox {
+    width: 250px;
+    display: inline;
+    color: #7F2A06;
+    font-family: 'Oleo Script Swash Caps', cursive;
+    font-size: 50px;
+    text-indent: 5px;
+    background-color: rgba(255,255,255,0.5); 
+    border: 3px solid rgba(255,255,255,0.5);
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px; 
+    border-radius: 4px;
+  }
+
+  #bodyContainer {
+    margin-top: 10px;
+    margin-bottom: 35px;
+    width:100%;
+  }
+
+  #picContainer {
+    width:100%;
+  }
+
+  #picSubcontainer {
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: table;
+    overflow:auto; 
+    width: 562px;
+    height: 637px;
+
+  }
+
+  #picTable1 {
+    position: absolute;
+    z-index: 2;
+    -moz-transform: rotate(-.5deg);
+    -webkit-transform: rotate(-.5deg);
+    -ms-transform: rotate(-.5deg);
+    -o-transform: rotate(-.5deg);
+    transform: rotate(-.5deg);
+  }
+
+  #picTable2 {
+    visibility: visible;
+    position: absolute;
+    z-index: 1;
+    -moz-transform: rotate(2.5deg);
+    -webkit-transform: rotate(2.5deg);
+    -ms-transform: rotate(2.5deg);
+    -o-transform: rotate(2.5deg);
+    transform: rotate(2.5deg);
+  }
+
+  .pic {
+    position: absolute;
+    border: 5px solid #888;
+    border-bottom: 115px solid #fafafa;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px; 
+    border-radius: 3px;
+    -webkit-box-shadow: 2px 0px 4px 1px #888;
+    -moz-box-shadow: 2px 0px 4px 1px #888;
+    box-shadow: 2px 0px 4px 1px #888;
+    height: 200px;
+    width: 200px;
+    z-index: 0;
+    background-color: #E3E3E3;
+    padding: 1px;
+    clear:both;
+    cursor:pointer;
+  }
+
+  .waiting {
+    position: relative;
+    margin-left: 216px;
+    margin-right: 216px;
+    margin-top: 216px;
+    margin-bottom: 216px;
+    height: 128px;
+    width: 128px;
+    z-index:5;
+    visibility:hidden;
+  }
+
+  .click_here {
+    position: relative;
+    margin-left: 152px;
+    margin-right: 152px;
+    margin-top: 152px;
+    margin-bottom: 152px;
+    height: 256px;
+    width: 256px;
+    z-index:10;
+    visibility:visible;
+  }
+
+  .captionSpace {
+    visibility: hidden;
+    margin-top: 30px;
+    width: 100%;
+    height: 115px;
+    display: block;
+    position: relative;
+    text-overflow: ellipsis;
+  }
+
+  .caption {
+    visibility: visible;
+    position: relative;
+    display: block;
+    margin-top: -75px;
+    margin-left: 40px;
+    margin-right: 40px;
+    font-size: 16px;
+    max-width: 450px;
+  }
+
+  #footerBar {
+    background-color: #7F2A06;
+    border-color: #7F2A06;
+    width:100%;
+    height:35px;
+  }
+
+  #footerDiv{
+    width:130px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .footerText {
+    color:  #999;
+    font-family:sans-serif;
+    line-height: 20px;
+    text-decoration:none;
+    float:left;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 10px
+  }
+
+  .footerLinks {
+    color:  #999;
+    font-family:sans-serif;
+    line-height: 20px;
+    text-decoration:none;
+    float:left;
+    margin-top: 10px
+  }
+
+  .footerLinks:hover{
+    color:white;
+  }
 }
 
-
-/* #### Tablets Portrait or Landscape #### */
-@media screen and (min-device-width: 768px) and (max-device-width: 1024px){
-  /* some CSS here */
-}
 
 
