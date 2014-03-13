@@ -244,7 +244,7 @@
     color: #7F2A06;
     font-family: 'Oleo Script Swash Caps', cursive;
     font-size: 40px;
-    /*text-indent: 5px;*/
+    text-indent: 3px;
     background-color: rgba(255,255,255,0.5); 
     border: 3px solid rgba(255,255,255,0.5);
     -webkit-border-radius: 4px;
@@ -255,22 +255,26 @@
   }
 
   #bodyContainer {
-    margin-top: 10px;
+    /*margin-top: 10px;*/
     margin-bottom: 35px;
     width:100%;
+    height:100%;
   }
 
   #picContainer {
     width:100%;
-    width: 270;
-    height: 380px;
+
+    overflow:auto; 
   }
 
   #picSubcontainer {
     margin-top: 20px;
+    width: 270px;
+    height: 360px;
+    float: left;
+    margin-left: 3%;
 /*    margin-left: auto;
     margin-right: auto;*/
-    float: left;
     display: table;
     overflow:auto; 
   }
@@ -289,7 +293,6 @@
   #picTable2 {
     visibility: visible;
     position: absolute;
-    margin-left: 10px;
     /*z-index: 1;*/
     -moz-transform: rotate(2.5deg);
     -webkit-transform: rotate(2.5deg);
@@ -332,9 +335,9 @@
 
   .captionSpace {
     visibility: hidden;
-    margin-top: 30px;
+    margin-top: -25px;
     width: 100%;
-    height: 115px;
+    height: 65px;
     display: block;
     position: relative;
     text-overflow: ellipsis;
@@ -344,7 +347,6 @@
     visibility: visible;
     position: relative;
     display: block;
-    margin-top: -50px;
     margin-left: 20px;
     margin-right: 20px;
     font-size: 12px;
