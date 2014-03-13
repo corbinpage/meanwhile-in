@@ -270,7 +270,7 @@
     margin-top: 20px;
     margin-left: auto;
     margin-right: auto;
-    /*float: left;*/
+    float: left;
     display: table;
     overflow:auto; 
   }
@@ -278,6 +278,7 @@
   #picTable1 {
     position: absolute;
     z-index: 2;
+    margin-left: 5px;
     -moz-transform: rotate(-.5deg);
     -webkit-transform: rotate(-.5deg);
     -ms-transform: rotate(-.5deg);
@@ -342,7 +343,7 @@
     visibility: visible;
     position: relative;
     display: block;
-    margin-top: -45px;
+    margin-top: -50px;
     margin-left: 20px;
     margin-right: 20px;
     font-size: 12px;
