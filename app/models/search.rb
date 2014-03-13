@@ -69,6 +69,8 @@ class Search < ActiveRecord::Base
 
     # i = image ? image : images.find{|i| i["id"].match(recent_ids.first)}
 
+    puts "image = " + image.inspect
+
     if image
       puts "||||||First image|||||"
       images.sample

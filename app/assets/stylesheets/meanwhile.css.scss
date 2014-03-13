@@ -282,7 +282,7 @@
   #picTable1 {
     position: absolute;
     z-index: 2;
-    margin-left: 10px;
+    margin-left: 5px;
     -moz-transform: rotate(-.5deg);
     -webkit-transform: rotate(-.5deg);
     -ms-transform: rotate(-.5deg);
@@ -293,6 +293,7 @@
   #picTable2 {
     visibility: visible;
     position: absolute;
+    margin-left: 5px;
     /*z-index: 1;*/
     -moz-transform: rotate(2.5deg);
     -webkit-transform: rotate(2.5deg);
@@ -350,6 +351,8 @@
     margin-left: 20px;
     margin-right: 20px;
     font-size: 12px;
+    height: 65px;
+    text-overflow: ellipsis;
   }
 
   #footerBar {
