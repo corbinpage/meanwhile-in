@@ -41,12 +41,14 @@
   }
 
   #textBox {
-    width: 250px;
+    width: 240px;
     display: inline;
     color: #7F2A06;
     font-family: 'Oleo Script Swash Caps', cursive;
     font-size: 50px;
     text-indent: 5px;
+    margin-left: auto;
+    margin-right: auto; 
     background-color: rgba(255,255,255,0.5); 
     border: 3px solid rgba(255,255,255,0.5);
     -webkit-border-radius: 4px;
@@ -71,7 +73,7 @@
     margin-right: auto;
     display: table;
     overflow:auto; 
-    width: 562px;
+    width: 280px;
     height: 637px;
 
   }
