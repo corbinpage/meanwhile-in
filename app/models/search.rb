@@ -73,7 +73,7 @@ class Search < ActiveRecord::Base
 
     if image
       puts "||||||First image|||||"
-      images.sample
+      image
     elsif images.find{|i| i["id"].match(recent_ids.first)}
       puts "||||||Second image|||||"
       images.find{|i| i["id"].match(recent_ids.first)}
