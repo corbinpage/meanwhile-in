@@ -46,7 +46,6 @@
   #titleText {
     color: #7F2A06;
     font-family: 'Oleo Script Swash Caps', cursive;
-    font-size: 50px;
     text-align: center;
     display: inline;
     margin-left: auto;
@@ -183,6 +182,10 @@
 
 @media screen and (min-device-width: 768px) {
 
+  #titleText {
+    font-size: 50px;
+  }
+
   #textBox {
     width: 250px;
     display: inline;
@@ -236,6 +239,10 @@
 
 /* #### iPhone 4+ Portrait or Landscape #### */
 @media screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2){
+
+  #titleText {
+    font-size: 40px;
+  }
 
   #textBox {
     width: 80%;
