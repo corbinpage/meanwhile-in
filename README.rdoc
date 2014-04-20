@@ -4,6 +4,6 @@ A simple and delightful 'Meanwhile In' meme generator.
 
 ‘Meanwhile In’ memes provide a comical view of daily life in a specific place in the world. This application creates a real-world equivalent of these memes using actual public posts from Instagram. Here’s the result:
 
-The app consists of a one page Rails application with a single model and controller that uses a modified Bootstrap theme on the front-end and communicates with the server via AJAX. I’m hosting the application on Heroku using Postgres as my production database (but SQLite in dev). My ‘Search’ class calls Instagram’s RESTful API and parses out the JSON output just like we’ve learned in class this week.
+The app consists of a one page Rails application with a single model and controller that uses a modified Bootstrap theme on the front-end and communicates with the server via AJAX. I’m hosting the application on Heroku using Postgres as my production database (but SQLite in dev). My ‘Search’ class calls Instagram’s RESTful API and parses out the JSON output.
 
 Questions, comments, and critiques are appreciated. Submit an Issue!

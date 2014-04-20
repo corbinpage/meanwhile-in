@@ -1,0 +1,184 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+ *= meanwhile.css.scss
+ */
+
+* {
+  margin: 0; }
+
+body {
+  background: none;
+  background: url(paper-background.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100%; }
+
+#titleRow {
+  width: 100%; }
+
+#titleWrapper {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: table; }
+
+#titleText {
+  color: #7F2A06;
+  font-family: 'Oleo Script Swash Caps', cursive;
+  font-size: 50px;
+  text-align: center;
+  display: inline;
+  margin-left: auto;
+  margin-right: auto; }
+
+#textBox {
+  display: inline;
+  color: #7F2A06;
+  font-family: 'Oleo Script Swash Caps', cursive;
+  font-size: 50px;
+  text-indent: 10px;
+  border: none;
+  background-color: transparent;
+  width: 200px;
+  display: inline;
+  text-overflow: ellipsis; }
+
+#textBox:focus {
+  outline: none; }
+
+#bodyContainer {
+  margin-top: 10px;
+  margin-bottom: 90px;
+  width: 100%; }
+
+#picContainer {
+  width: 100%; }
+
+#picTable {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto; }
+
+#row1 {
+  z-index: 1;
+  -moz-transform: rotate(-1.5deg);
+  -webkit-transform: rotate(-1.5deg);
+  -ms-transform: rotate(-1.5deg);
+  -o-transform: rotate(-1.5deg);
+  transform: rotate(-1.5deg); }
+
+.polaroid {
+  overflow: visible; }
+
+.pic {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  border: 40px solid #fafafa;
+  border-bottom: 115px solid #fafafa;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 2px 0px 4px #888;
+  -moz-box-shadow: 2px 0px 4px #888;
+  box-shadow: 2px 0px 4px #888;
+  height: 480px;
+  width: 480px;
+  z-index: 0;
+  background-color: #E3E3E3;
+  padding: 1px;
+  clear: both; }
+
+.waiting {
+  position: relative;
+  margin-left: 216px;
+  margin-right: 216px;
+  margin-top: 216px;
+  margin-bottom: 216px;
+  height: 128px;
+  width: 128px;
+  z-index: 2;
+  visibility: hidden; }
+
+.captionSpace {
+  visibility: hidden;
+  margin-top: 30px;
+  width: 100%;
+  height: 115px;
+  display: block;
+  position: relative;
+  text-overflow: ellipsis;
+  /*  background-color:white;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px; 
+    border-radius: 3px;
+    -webkit-box-shadow: 2px 2px 4px #888;
+    -moz-box-shadow: 2px 2px 4px #888;
+    box-shadow: 2px 2px 4px #888;
+    z-index: 1;*/ }
+
+.caption {
+  visibility: visible;
+  position: relative;
+  display: block;
+  margin-top: -75px;
+  margin-left: 40px;
+  margin-right: 40px;
+  font-size: 16px;
+  max-width: 450px; }
+
+#footerBar {
+  background-color: #7F2A06;
+  border-color: #7F2A06;
+  width: 100%;
+  height: 35px;
+  /*text-align: center;*/ }
+
+#footerDiv {
+  width: 130px;
+  margin-left: auto;
+  margin-right: auto;
+  /*text-align: center;*/ }
+
+.footerText {
+  color: #999;
+  font-family: sans-serif;
+  line-height: 20px;
+  text-decoration: none;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px; }
+
+.footerLinks {
+  color: #999;
+  font-family: sans-serif;
+  line-height: 20px;
+  text-decoration: none;
+  float: left;
+  margin-top: 10px; }
+
+.footerLinks:hover {
+  color: white; }
+
+/* #### iPhone 4+ Portrait or Landscape #### */
+@media screen and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+  /* some CSS here */ }
+/* #### Tablets Portrait or Landscape #### */
+@media screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* some CSS here */ }
+/* #### Desktops #### */
+@media screen and (min-width: 1024px) {
+  /* some CSS here */ }
