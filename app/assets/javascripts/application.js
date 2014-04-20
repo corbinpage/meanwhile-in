@@ -15,44 +15,45 @@
 //= bootstrap.min.js
 //= require_self
  
-       function changePic(path,username){
-        $('#pic1').attr('alt',username);
-        $('#pic1').attr('src',path);
-        $('#pic1').load(function(){
-          $('#waiting1').css('visibility','hidden');
-        });
-      }
-      function changeTextbox(text){
-        $('#textBox').val(text); 
-        $('#textBox').focus();
-      }
-      function getNewPic() {
-            $('#waiting1').css('visibility','visible');
-            $.ajax({
-                 type:'get', 
-                 url: '/meanwhile/index', 
-                 data: $.param({ text: $("#textBox").val(), refresh: true}),
-                 timeout: 5000,
-                 error: function(x, textStatus, m) {
-                  $('#waiting1').css('visibility','hidden');
-                  console.log(textStatus);
-                 },
-                 success: function (data) {
-                  console.log(data);
-                  changePic(data.url,data.username);
-                  $('.caption').text(data.caption); 
-                  changeTextbox(data.text);
-                 }
-            });
-      }
-      $('document').ready(function(){
-        $('#waiting1').css('visibility','visible');
-        $('#pic1').load(function(){
-          $('#waiting1').css('visibility','hidden');
-        });
-        $('#textBox').keypress(function(e){
-          if(e.which == 13){          //Enter key pressed
-              $('#pic1').click();    //Trigger search button click event
-          }
-        });
-      })
+function changePic(path,username){
+  $('#pic1').attr('alt',username);
+  $('#pic1').attr('src',path);
+  $('#pic1').load(function(){
+    $('#waiting1').css('visibility','hidden');
+  });
+}
+
+function changeTextbox(text){
+  $('#textBox').val(text); 
+  $('#textBox').focus();
+}
+
+function getNewPic() {
+  $('#waiting1').css('visibility','visible');
+  $.ajax({
+    type:'get', 
+    url: '/meanwhile/index', 
+    data: $.param({ text: $("#textBox").val(), refresh: true}),
+    timeout: 5000,
+    error: function(x, textStatus, m) {
+      $('#waiting1').css('visibility','hidden');
+    },
+    success: function (data) {
+      changePic(data.url,data.username);
+      $('.caption').text(data.caption); 
+      changeTextbox(data.text);
+    }
+  });
+}
+
+$('document').ready(function(){
+  $('#waiting1').css('visibility','visible');
+  $('#pic1').load(function(){
+    $('#waiting1').css('visibility','hidden');
+  });
+  $('#textBox').keypress(function(e){
+    if(e.which == 13){          //Enter key pressed
+      $('#pic1').click();    //Trigger search button click event
+    }
+  });
+})

@@ -72,13 +72,10 @@ class Search < ActiveRecord::Base
     puts "image = " + image.inspect
 
     if image
-      puts "||||||First image|||||"
       image
     elsif images.find{|i| i["id"].match(recent_ids.first)}
-      puts "||||||Second image|||||"
       images.find{|i| i["id"].match(recent_ids.first)}
     else
-      puts "||||||Not finding an Image||||||"
       images.sample
     end
   end

@@ -8,7 +8,7 @@
   </div>
   <div id="picContainer">
     <div id="picSubcontainer">
-      <table id="picTable1">
+      <table id="picTable">
         <tr>
           <td>
             <div>
@@ -26,24 +26,8 @@
           </td>
         </tr>
       </table>
-      <table id="picTable2">
-        <tr>
-          <td>
-            <div>
-              <%= image_tag @data.url, alt: @data.username, id: "pic2",
-               class: "pic", onclick: "getNewPic()"%>
-              <%= image_tag "waiting.gif", alt: "Loading...", id: "waiting2", class: "waiting"%>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div class="captionSpace">
-              <%= content_tag(:p, "Placeholder", class: "caption") %>
-            </div>
-          </td>
-        </tr>
-      </table>
+      <div id="background-polaroid">
+      </div>
     </div>
   </div>
 </div>

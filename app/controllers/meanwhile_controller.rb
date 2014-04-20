@@ -3,10 +3,6 @@ class MeanwhileController < ApplicationController
   def index
     search = Search.new(start_time: Time.now, custom1: request.remote_ip.to_s.chomp)
     search.get_result(params[:text])
-
-    puts "what's in Search | " + search.inspect
-
-
     search.save
     @data = search
 
