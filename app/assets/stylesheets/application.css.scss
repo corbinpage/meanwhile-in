@@ -15,6 +15,10 @@
     margin: 0;
   }
 
+  table {
+    border-spacing: 0px;
+  }
+
   body {
     background: none;
     background: url(paper-background.jpg) no-repeat center center fixed; 
@@ -71,8 +75,6 @@
 
   #picSubcontainer {
     margin-top: 20px;
-    margin-left: auto;
-    margin-right: auto;
     display: table;
     overflow: auto; 
   }
@@ -89,16 +91,12 @@
 
   .pic {
     position: absolute;
-    border: 40px solid #fafafa;
-    border-bottom: 115px solid #fafafa;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px; 
     border-radius: 3px;
     -webkit-box-shadow: 2px 0px 4px 1px #888;
     -moz-box-shadow: 2px 0px 4px 1px #888;
     box-shadow: 2px 0px 4px 1px #888;
-    height: 480px;
-    width: 480px;
     z-index: 0;
     background-color: #E3E3E3;
     padding: 1px;
@@ -108,21 +106,13 @@
 
   .waiting {
     position: relative;
-    margin-left: 216px;
-    margin-right: 216px;
-    margin-top: 216px;
-    margin-bottom: 216px;
-    height: 128px;
-    width: 128px;
     z-index:5;
     visibility:hidden;
   }
 
   .captionSpace {
     visibility: hidden;
-    margin-top: 30px;
     width: 100%;
-    height: 115px;
     display: block;
     position: relative;
     text-overflow: ellipsis;
@@ -132,17 +122,10 @@
     visibility: visible;
     position: relative;
     display: block;
-    margin-top: -75px;
-    margin-left: 40px;
-    margin-right: 40px;
-    font-size: 16px;
-    max-width: 450px;
     text-overflow: ellipsis;
   }
 
   #background-polaroid {
-    width: 566px;
-    height: 644px;
     position: absolute;
     z-index: 1;
     visibility: visible;
@@ -206,10 +189,48 @@
     text-indent: 5px;
   }
 
+  .pic {
+    height: 480px;
+    width: 480px;
+    border: 40px solid #fafafa;
+    border-bottom: 115px solid #fafafa;
+  }
+
+  .waiting {
+    margin-left: 216px;
+    margin-right: 216px;
+    margin-top: 216px;
+    margin-bottom: 216px;
+    height: 128px;
+    width: 128px;
+  }
+
+  #background-polaroid {
+    width: 566px;
+    height: 644px;
+  }
+
   #picSubcontainer {
     width: 562px;
     height: 637px;
+    margin-left: auto;
+    margin-right: auto;
   }
+
+  .captionSpace {
+    margin-top: 30px;
+    height: 115px;
+  }
+
+  .caption {
+    margin-top: -75px;
+    margin-left: 40px;
+    margin-right: 40px;
+    font-size: 16px;
+    max-width: 450px;
+  }
+
+
 }
 
 /* #### iPhone 4+ Portrait or Landscape #### */
@@ -224,15 +245,45 @@
     margin-right: auto; 
   }
 
+  .pic {
+    height: 240px;
+    width: 240px;
+    border: 20px solid #fafafa;
+    border-bottom: 58px solid #fafafa;
+  }
+
+  .waiting {
+    margin-left: 108px;
+    margin-right: 108px;
+    margin-top: 108px;
+    margin-bottom: 108px;
+    height: 64px;
+    width: 64px;
+  }
+
+  #background-polaroid {
+    width: 283px;
+    height: 322px;
+  }
+
   #picSubcontainer {
     width: 270px;
     height: 360px;
-    float: left;
-    margin-left: 3%;
+    margin-left: 5%;
   }
 
-  #picTable {
-    margin-left: 5px;
+  .captionSpace {
+    margin-top: 10px;
+    height: 58px;
   }
+
+  .caption {
+    margin-top: -35px;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-size: 10px;
+    max-width: 240px;
+  }
+
 
 }
